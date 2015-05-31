@@ -16,6 +16,11 @@ This tutorial consists of four parts:
 4. Use the module re to identify restriction sites.
 Have fun!
 
+
+### What is sickle cell anemia?
+
+At the beginning of the course, watch the 5-minute movie **"Sickle Cell Anemia"** by Paulo César Naoum and Alia F. M. Naoum: **[http://www.youtube.com/watch?v=R4-c3hUhhyc](http://www.youtube.com/watch?v=R4-c3hUhhyc)**.
+
 ## 1. Bio.Entrez
 **Retrieving DNA and protein sequences**
 
