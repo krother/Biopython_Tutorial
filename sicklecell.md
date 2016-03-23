@@ -65,7 +65,7 @@ Retrieve entries for the gene sequences of the human globin family. Find appropr
 
 ### 2.1 Read a GenBank file
 
-Read a the ‘sickle.gb’ file from task 1.4 using the SeqIO.parse(). The first parameter of parse() is the filename, the second is ‘genbank’. Use the type() and dir() function to find out what the resulting object is and what attributes it has.
+Read the ‘sickle.gb’ file from task 1.4 using the `SeqIO.parse()` function. The first parameter of `parse()` is the filename, the second is ‘genbank’. Use the `type()` and `dir()` function to find out what the resulting object is and what attributes it has.
 
 ### 2.2 Print information for one sequence
 
@@ -73,7 +73,7 @@ Print the id, name and description of the sickle cell globin entry.
 
 ### 2.3 Write a FASTA file
 
-Save the GenBank entry from task 2.1 to a FASTA file using the `SeqIO.write()` function. The first parameter of write() is a list of sequence records, the second a file open for writing, and the third should be ‘fasta’.
+Save the GenBank entry from task 2.1 to a FASTA file using the `SeqIO.write()` function. The first parameter of `write()` is a list of sequence records, the second a file open for writing, and the third should be ‘fasta’.
 
 ### 2.4 Print information for multiple sequences
 
