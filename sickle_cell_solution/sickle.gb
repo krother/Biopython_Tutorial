@@ -1,0 +1,44 @@
+LOCUS       HUMBETGLA                468 bp    mRNA    linear   PRI 27-APR-1993
+DEFINITION  Human sickle cell beta-globin mRNA, complete cds.
+ACCESSION   M25079
+VERSION     M25079.1  GI:179408
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 468)
+  AUTHORS   Marotta,C.A., Forget,B.G., Cohen-Solal,M. and Weissman,S.M.
+  TITLE     Nucleotide sequence analysis of coding and noncoding regions of
+            human beta-globin mRNA
+  JOURNAL   Prog. Nucleic Acid Res. Mol. Biol. 19, 165-175 (1976)
+   PUBMED   1019344
+COMMENT     Original source text: Human sickle cell, cDNA to mRNA.
+FEATURES             Location/Qualifiers
+     source          1..468
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /cell_type="sickle cell"
+     CDS             1..444
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /codon_start=1
+                     /product="beta-globin"
+                     /protein_id="AAA35597.1"
+                     /db_xref="GI:179409"
+                     /translation="MVHXTPVEKSAVTALWGKVNVDEXGGEALGXLLVVYPWTQRFXX
+                     SFGDLXTPXAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPE
+                     NFRLLGNVXVCVLAHHFGKEFTPPVXAAYQKVVAGVANALAHKYH"
+ORIGIN      
+        1 atggtncayy tnacnccngt ggagaagtcy gcygtnacng cnctntgggg yaaggtnaay
+       61 gtggatgaag yyggyggyga ggccctgggc agnctgctng tggtctaccc ttggacccag
+      121 aggttcttng antcnttygg ggatctgnnn acnccngang cagttatggg caaccctaag
+      181 gtgaaggctc atggcaagaa agtgctcggt gcctttagtg atggcctggc tcacctggac
+      241 aacctcaagg gcacctttgc cacactgagt gagctgcact gtgacaagct ncaygtggat
+      301 cctgagaact tcaggctnct nggcaacgtg ytngtctgyg tgctggccca tcactttggc
+      361 aaagaattca ccccaccagt gcangcngcc tatcagaaag tggtngctgg tgtngctaat
+      421 gccctggccc acaagtatca ctaagctngc yttyttgytg tccaattt
+//
+
