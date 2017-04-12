@@ -18,31 +18,35 @@ This tutorial consists of four parts:
 
 **Have fun!**
 
+----
 
 ### What is sickle cell anemia?
 
 At the beginning of the course, watch the 5-minute movie **"Sickle Cell Anemia"** by Paulo César Naoum and Alia F. M. Naoum: **[http://www.youtube.com/watch?v=R4-c3hUhhyc](http://www.youtube.com/watch?v=R4-c3hUhhyc)**.
 
-## 1. Bio.Entrez
-**Retrieving DNA and protein sequences**
+----
+
+## 1. Retrieving DNA and protein sequences with Bio.Entrez
 
 ### 1.1 Search identifiers on NCBI
 
-Search for the cDNA sequence of the sickle cell globin protein from NCBI.
-Use the Entrez.esearch function. As keywords, use ‘sickle cell AND human NOT chromosome’. 
+Write Python code that searches for the cDNA sequence of the sickle cell globin protein from NCBI.
+Use the `Entrez.esearch` function. As keywords, use ‘sickle cell AND human NOT chromosome’. 
 Print the resulting database identifiers (not the full sequences).
+
+Use the NCBI examples from the back of this tutorial.
 
 ### 1.2 Retrieve sequences using identifiers
 
-Using the identifiers from task 1.1, retrieve the full sequence with the `Entrez.efetch` function from the NCBI server. 
+Use the identifiers from task 1.1, retrieve the full sequence with the `Entrez.efetch` function from the NCBI server. 
+The parameter `rettype` should be ‘fasta’.
 
 Print the identifier and defline for each entry using a for loop. 
-The parameter `rettype` should be ‘fasta’.
 
 
 ### 1.3 Retrieve a single GenBank entry
 
-In the output of task 1.2, locate the cDNA of the sickle cell globin. Use the identifier to download a GenBank entry only for that sequence. Print the entry. The parameter rettype should be ‘gb’.
+In the output of task 1.2, locate the cDNA of the sickle cell globin *manually*. Copy the identifier. Use the identifier to download the full GenBank entry only for that sequence with efetch`. Print the entry. The parameter `rettype` should be ‘gb’.
 
 ### 1.4 Write an output file
 
@@ -50,14 +54,19 @@ Save the GenBank entry from task 1.3 to a file ‘sickle.gb’.
 
 ### 1.5 Retrieve and write multiple GenBank entries
 
-Retrieve entries for the gene sequences of the human globin family. Find appropriate keywords to limit the search to beta-globin and only complete coding sequences. Write the outcome to a file.
+Combine `esearch`  and `efetch` to retrieve entries for the gene sequences of the human globin family. Find appropriate keywords to limit the search to beta-globin and only complete coding sequences. Write the outcome to a file.
 
-### Optional tasks for fast programmers: 
+#### Hint: 
+It is often more convenient to design the query in a browser window before moving to Python.
 
-- 1.6 Save the retrieved entries to a single FASTA file.
-- 1.7 Save each of the beta-globin sequences to a separate GenBank file.
-- 1.8 Use Entrez to search and retrieve recent PubMed entries related to malaria and sickle cell anemia.
 
+### 1.6 Optional Exercises
+
+* Save the retrieved entries to a single FASTA file.
+* Save each of the beta-globin sequences to a separate GenBank file.
+* Use Entrez to search 100 recent references related to malaria and sickle cell anemia on PubMed.
+
+----
 
 ## 2. Bio.SeqIO
 
@@ -65,30 +74,53 @@ Retrieve entries for the gene sequences of the human globin family. Find appropr
 
 ### 2.1 Read a GenBank file
 
-Read the ‘sickle.gb’ file from task 1.4 using the `SeqIO.parse()` function. The first parameter of `parse()` is the filename, the second is ‘genbank’. Use the `type()` and `dir()` function to find out what the resulting object is and what attributes it has.
+Read the ‘sickle.gb’ file from task 1.4 using the `SeqIO.parse()` function:
+
+    from Bio import SeqIO
+
+    records = SeqIO.parse(filename, format)
+
+The first parameter of `parse()` is the filename, the format is ‘genbank’. Print the `records` object.
+
+Find out how to see the actual entries.
+
 
 ### 2.2 Print information for one sequence
 
+Use the `dir()` function on a single record object to find out what 
+attributes it has.
 Print the id, name and description of the sickle cell globin entry.
 
 ### 2.3 Write a FASTA file
 
-Save the GenBank entry from task 2.1 to a FASTA file using the `SeqIO.write()` function. The first parameter of `write()` is a list of sequence records, the second a file open for writing, and the third should be ‘fasta’.
+Save the GenBank entry from task 2.1 to a FASTA file using the `SeqIO.write()` function:
+
+    SeqIO.write(records, file, format)
+
+The first parameter of `write()` is a list of sequence records, the second a file open for writing, and the third should be ‘fasta’.
+
 
 ### 2.4 Print information for multiple sequences
 
 Print the id, name, and description of all human beta-globins.
 
+#### Hint:
+This is a great occasion to exercise string formatting, e.g. to obtain tabular outpus:
+
+    print("{:10s} {:7d}".format('Ada', 33))
+
+
 ### 2.5 Filtering sequence entries
 
-Print the same information as in task 2.4, but do not show non-globin entries : if the description contains either ‘vector’ or ‘isolate’, don’t print anything.
+Print the same information as in task 2.4, but do not show non-globin entries. If the description contains either ‘vector’ or ‘isolate’, don’t print anything.
 
-### Optional tasks for fast programmers:
+### 2.6 Optional Exercises
 
-- 2.6 Filter the list of sequence entries even further using your own criteria and save the filtered list to a FASTA file.
-- 2.7 Sort the lines in the parse_FASTA_easy/ folder
-- 2.8 do the exercise in the parse_FASTA_difficult/ folder
+* collected the entries matching all criteria in a new list
+* save the filtered list to a FASTA file
+* Filter the list of sequence entries even further using your own criteria
 
+----
 
 ## 3. Bio.Seq and Bio.SeqRecord
 
@@ -96,7 +128,7 @@ Print the same information as in task 2.4, but do not show non-globin entries : 
 
 ### 3.1 The DNA sequence
 
-Print the DNA sequence of the sickle cell globin cDNA. Use the `dir()` function to find out the name of the attribute.
+Read the sequence of the sickle cell globin cDNA. Print the DNA sequence. Use the `dir()` function to find out the name of the attribute.
 
 ### 3.2 Transcribe DNA to RNA
 
@@ -104,56 +136,72 @@ Transcribe the sickle cell cDNA sequence to RNA and print it. Use the `transcrib
 
 ### 3.3 Translate RNA to protein
 
-Translate the sickle cell RNA to a protein sequence and print it. Use the `translate()` method of a `Seq` object. Save the protein sequence to a separate file.
+Translate the sickle cell RNA to a protein sequence and print it. Use the `translate()` method of a `Seq` object.
+
+Save the protein sequence to a separate file.
 
 ### 3.4 Analyze annotations of beta-globin
 
-Find the  beta-globin entry with accession `L26462`. Use the field `r.annotations['accessions']` on a `SeqRecord` object. Write the entry to a separate GenBank file.
+In the file with many globins, find the beta-globin entry with accession `L26462`. Use the field `r.annotations['accessions']` on a `SeqRecord` object to find it. Write the entry to a separate GenBank file.
 
-#### Bonus Question:
-
-Print the complete annotations of the record. What data type in Python is it? Identify three methods to use that data type. 
-
-### 3.6 Extract sequence features
+### 3.5 Extract sequence features
 
 Print all features of the L26452 entry. Use the field `r.features` on a `SeqRecord` object.
 
-### 3.7 Extract exons
+### 3.6 Extract exons
 
-Print all exon features, their attributes start, end and nofuzzy_start, nofuzzy_end. Use the latter as indices to extract portions of the complete sequence. Concatenate all exon sequences to a single string.
+Print all exon features and their attributes `start`, `end` and `nofuzzy_start`, `nofuzzy_end`:
 
-### 3.8 Display the beta-globin protein sequence
+    seq['']
+
+For each exon, extract the interval
+
+    seq[nofuzzy_start:nofuzzy_end]
+
+Use the indices to extract portions of the complete sequence. Concatenate all exon sequences to a single string.
+
+### 3.7 Extract the beta-globin protein sequence
 
 Transcribe and translate the concatenated exon sequence and print it.
 
-### 3.9 Results
+### 3.8 Results
 
 Print the sickle cell and healthy beta-globin sequence in subsequent lines or a text file. Also print the two corresponding protein sequences in subsequent lines. What differences do you see?
 
-### Optional tasks for fast programmers:
+### 3.9 Optional Exercises
 
-- 3.10 What are the ‘N’ characters in the sickle cell globin cDNA? How did they affect the transcription/translation?
-- 3.11 Do the exercise in the read_alignment/ folder
-- 3.12 Figure out how to read an alignment using Biopython
-- 3.13 Design a PCR primer that specifically recognizes the sickle cell gene.
+* What are the ‘N’ characters in the sickle cell globin cDNA? How did they affect the transcription/translation?
+* Check in the documentation how to read an alignment of multiple sequences using Biopython
+* Propose a PCR primer that specifically recognizes the sickle cell gene.
 
+----
 
 ## 4. Pattern Matching
 **Identification of restriction sites**
 
-### 4.1 Familiarize with regular expression
+### 4.1 Familiarize with Regular Expressions
 
 Do the first 3-4 exercises on the RegexOne website (http://www.regexone.com)
 
 ### 4.2 Search for a start codon
 
-Use the `re.search()` function to locate the start codon (ATG) in the cDNA sequence of healthy beta-globin. The first parameter is a search pattern string, and the second is the string to be searched.
+Use the `re.search()` function to locate the start codon (ATG) in the cDNA sequence of healthy beta-globin. The first parameter is a search pattern string, and the second is the string to be searched:
+
+    import re
+
+    match = re.search('ATG', sequence)
+    if match:
+        print(match.start, match.stop)
 
 ### 4.3 Search for a restriction site
 
-Create a regular expression using the `re.compile()` function for the restriction enzyme DdeI (cuts at `NN^CTNAG`). Search with a regular expression in both sickle cell and beta-globin DNA sequences. If the search method returns a match, the match object has a start and a stop attribute. Print the start and stop found in both DNA sequences.
+Create a regular expression using the `re.compile()` function for the restriction enzyme DdeI (cuts at `NN^CTNAG`). Search with a regular expression in both sickle cell and beta-globin DNA sequences. 
 
-### 4.4 Apply more restriction enzymes
+For simplicity copy-paste both sequences to string variables in your program.
+
+If the search method returns a match, print the start and stop found in both DNA sequences.
+
+### 4.4 Try more restriction enzymes
 
 Test patterns for the restriction sites of:
 
@@ -163,9 +211,9 @@ Test patterns for the restriction sites of:
     EcoRI (GAATTC)
     MstII (CCTNAGG) 
 
-on both DNA sequences. Which restriction enzyme could you use to specifically identify carriers of the sickle cell anemia gene.
+on both DNA sequences. Which restriction enzyme could you use to specifically identify carriers of the sickle cell anemia gene?
 
-### Optional tasks for fast programmers: 
+### Optional Exercises 
 
-- 4.5 To facilitate the restriction analysis, replace the N's in the sickle cell DNA by the corresponding positions from the healthy DNA. Print the resulting DNA sequence.
-- 4.6 Take a look at the other exercise websites given in the regex_links.pdf document.
+* Take a look at the website [Regex101](http://www.regex101.com)
+* To facilitate the restriction analysis, replace the N's in the sickle cell DNA by the corresponding positions from the healthy DNA. Print the resulting DNA sequence.

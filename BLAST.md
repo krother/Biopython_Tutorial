@@ -3,7 +3,7 @@
 
 ## Overview
 
-In this tutorial, you learn how to run BLAST **locally, many times** and to **read BLAST results with Python**. While doing so, you will familiarize with the concept of **program pipelines** and how you can implement them in Python.
+In this tutorial, you will automate BLAST queries with Python. You will learn how to run BLAST **locally**, **multiple times**, and how to **read BLAST results with Python**. In the process, you will build a **program pipeline**, a concept useful in many biological analyses independent of BLAST.
 
 The tutorial consists of six parts:
 
@@ -18,7 +18,7 @@ The tutorial consists of six parts:
 
 ## Case Study: Plasmodium falciparum
 
-We have the hypothesis that *Plasmodium falciparum* has adapted to the human organism during its long history as a parasite. Specifically, we want to examine whether proteins from *Plasmodium* are more similar to human proteins than one would expect. If this is true we could interpret e.g. that more similar proteins help *Plasmodium* to evade the human immune system.
+We have the hypothesis that *Plasmodium falciparum* has adapted to the human organism during its long history as a parasite. Specifically, we want to examine whether proteins from *Plasmodium* are more similar to human proteins than one would expect. If this is true, we could interpret e.g. that more similar proteins help *Plasmodium* to evade the human immune system.
 
 As a small sample study, we will BLAST a set of peptides from a few *Homo sapiens* proteins against the proteome of *Plasmodium falciparum*. As a control, we will use the proteome of *Schizosaccharomyces pombe*.
 
