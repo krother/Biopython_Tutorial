@@ -14,13 +14,12 @@ BseRI = re.compile('GAGGAG..........')
 EcoRI = re.compile('GAATTC')
 MstII = re.compile('CCT.AGG')
 
-ENZYMES = [DdeI, HinfI, BceAI, BseRI, EcoRI, MstII]
+ENZYMES = [HinfI, BceAI, BseRI, EcoRI, MstII]
 
 for enz in ENZYMES:
     r1 = enz.search(globin)
     r2 = enz.search(sickle)
     if r1:
-        print 'GLOBIN:', r1.start(), r1.end()
+        print('GLOBIN:', r1.start(), r1.end())
     if r2:
-        print 'SICKLE:', r2.start(), r2.end()
-
+        print('SICKLE:', r2.start(), r2.end())

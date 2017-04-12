@@ -2,12 +2,12 @@ from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
 
-# task 3.8    
+# task 3.7
 records = SeqIO.parse('L26462_exon.fasta', "fasta")
-globin = records.next()
+globin = next(records)
 
 rna = globin.seq.transcribe()
-print rna
+print(rna)
 
 protein = rna.translate()
-print protein
+print(protein)

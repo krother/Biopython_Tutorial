@@ -3,7 +3,8 @@ from Bio import SeqIO
 
 # task 2.2
 records = SeqIO.parse("sickle.gb", "genbank")
-for r in records:
-    print r.id
-    print r.name
-    print r.description
+for rec in records:
+    print(dir(rec))
+    print(rec.id)
+    print(rec.name)
+    print(rec.description)

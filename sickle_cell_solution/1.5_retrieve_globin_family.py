@@ -8,12 +8,11 @@ Entrez.email = "krother@academis.eu"
 # search identifiers
 handle = Entrez.esearch(db="nucleotide", term="beta-globin AND human AND complete cds NOT chromosome NOT thalassemia NOT zebra fish", retmax=150)
 records = Entrez.read(handle)
-print records['Count']
+print(records['Count'])
 identifiers = records['IdList']
-print identifiers
+print(identifiers)
 
 # retrieve sequence entries
 handle = Entrez.efetch(db="nucleotide", id=identifiers, rettype="gb", retmode="text")
 records = handle.read()
-handle = open("globins.gb", "w")
-handle.write(records)
+open("globins.gb", "w").write(records)

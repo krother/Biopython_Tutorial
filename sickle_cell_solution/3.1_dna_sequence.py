@@ -3,10 +3,9 @@ from Bio import SeqIO
 
 # task 3.1
 records = SeqIO.parse("sickle.gb", "genbank")
-sickle = records.next()
-print dir(sickle)
+sickle = next(records)
+print(dir(sickle))
 
-print sickle.id
-print sickle.description
-print sickle.seq
-
+print(sickle.id)
+print(sickle.description)
+print(sickle.seq)

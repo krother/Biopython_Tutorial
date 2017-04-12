@@ -4,9 +4,8 @@ import re
 
 # task 4.1
 records = SeqIO.parse('L26462.gb', 'genbank')
-globin = records.next()
+globin = next(records)
 
 match = re.search('ATG', str(globin.seq))
-print match
-print match.start(), match.end()
-
+if match:
+    print(match.start(), match.end())
