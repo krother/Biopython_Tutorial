@@ -46,7 +46,7 @@ Print the identifier and defline for each entry using a for loop.
 
 ### 1.3 Retrieve a single GenBank entry
 
-In the output of task 1.2, locate the cDNA of the sickle cell globin *manually*. Copy the identifier. Use the identifier to download the full GenBank entry only for that sequence with efetch`. Print the entry. The parameter `rettype` should be ‘gb’.
+In the output of task 1.2, locate the cDNA of the sickle cell globin *manually*. Copy the identifier. Use the identifier to download the full GenBank entry only for that sequence with `efetch`. Print the entry. The parameter `rettype` should be ‘gb’.
 
 ### 1.4 Write an output file
 
@@ -152,11 +152,14 @@ Print all features of the L26452 entry. Use the field `r.features` on a `SeqReco
 
 Print all exon features and their attributes `start`, `end` and `nofuzzy_start`, `nofuzzy_end`:
 
-    seq['']
+    for feature in seq['features']:
+        print(feature)
+        ...
+        # add printing attributes here
 
 For each exon, extract the interval
 
-    seq[nofuzzy_start:nofuzzy_end]
+    feature[nofuzzy_start:nofuzzy_end]
 
 Use the indices to extract portions of the complete sequence. Concatenate all exon sequences to a single string.
 

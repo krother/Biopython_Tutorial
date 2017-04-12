@@ -54,10 +54,10 @@ Look up *Section 3.2* of the Biopython documentation on ([http://biopython.org/D
 
 What is the GC-content of the sequence loaded in task 1?
 
-a. 55.556
-b. 46.875
-c. 33.514
-d. 50.000
+* 55.556
+* 46.875
+* 33.514
+* 50.000
 
 ----
 
