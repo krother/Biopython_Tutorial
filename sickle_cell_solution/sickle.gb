@@ -1,7 +1,7 @@
 LOCUS       HUMBETGLA                468 bp    mRNA    linear   PRI 27-APR-1993
 DEFINITION  Human sickle cell beta-globin mRNA, complete cds.
 ACCESSION   M25079
-VERSION     M25079.1  GI:179408
+VERSION     M25079.1
 KEYWORDS    .
 SOURCE      Homo sapiens (human)
   ORGANISM  Homo sapiens
@@ -27,7 +27,6 @@ FEATURES             Location/Qualifiers
                      /codon_start=1
                      /product="beta-globin"
                      /protein_id="AAA35597.1"
-                     /db_xref="GI:179409"
                      /translation="MVHXTPVEKSAVTALWGKVNVDEXGGEALGXLLVVYPWTQRFXX
                      SFGDLXTPXAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPE
                      NFRLLGNVXVCVLAHHFGKEFTPPVXAAYQKVVAGVANALAHKYH"

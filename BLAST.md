@@ -183,7 +183,11 @@ Inspect the result.
 
 ## 5. Reading BLAST output with Biopython
 
+In this exercise, we will evaluate the results of multiple BLAST runs. To save time compared to a manual evaluation on many files, we will write a Python script to identify the best hits. For that, we need BLAST output in the XML format. You can obtain XML output by adding the `-outfmt 5` option.
+
 ### 5.1 Reading XML data
+
+XML is a structured format that is easy for computers to parse. Biopython offers a parser specific for the BLAST output which reads an output file into a neat data structure.
 
 Run the program **BLAST_XML/parse_blast_xml.py**.
 
