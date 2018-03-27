@@ -9,7 +9,7 @@ Pandas is the de-facto standard to read, analyze and visualize tabular data from
 
 The main data structure for tables is called **DataFrame**:
 
-![pandas DataFrame structure](pandas.md)
+![pandas DataFrame structure](pandas.png)
 
 ### Installing pandas
 
