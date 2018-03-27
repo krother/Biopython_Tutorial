@@ -66,6 +66,15 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       inkscape:export-ydpi="90.061836"
+       inkscape:export-xdpi="90.061836"
+       y="91.152756"
+       x="-9.2996273"
+       height="152.40283"
+       width="218.92665"
+       id="rect6911"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.09330511;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <g
        id="g6851"
        transform="matrix(0.90604573,0,0,0.90604573,28.593885,181.84469)"
@@ -614,7 +623,9 @@
     </g>
     <g
        id="g6802"
-       transform="translate(0,1.6148885e-5)">
+       transform="translate(0,1.6148885e-5)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          y="106.99598"
          x="5.336926"
@@ -649,7 +660,9 @@
     </g>
     <g
        id="g6816"
-       transform="translate(0,-3.3854038)">
+       transform="translate(0,-3.3854038)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          style="opacity:1;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:1.19796741;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="rect6793"
@@ -684,7 +697,9 @@
     </g>
     <g
        id="g6809"
-       transform="translate(0,-6.2362876)">
+       transform="translate(0,-6.2362876)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          y="183.43506"
          x="5.336926"
@@ -707,7 +722,9 @@
            id="flowPara6777">extract exons</flowPara></flowRoot>    </g>
     <g
        id="g6823"
-       transform="translate(0,-4.0090429)">
+       transform="translate(0,-4.0090429)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          style="opacity:1;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:1.19796741;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="rect6781"
@@ -744,7 +761,9 @@
        xml:space="preserve"
        id="flowRoot6867"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.16232504,0,0,0.16232504,36.275529,46.645754)"><flowRegion
+       transform="matrix(0.16232504,0,0,0.16232504,36.275529,46.645754)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><flowRegion
          id="flowRegion6869"><rect
            id="rect6871"
            width="598.18164"
@@ -756,7 +775,9 @@
        transform="matrix(0.16232504,0,0,0.16232504,36.484776,82.37647)"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot6885"
-       xml:space="preserve"><flowRegion
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><flowRegion
          id="flowRegion6879"><rect
            y="375.37683"
            x="404.28571"
@@ -768,7 +789,9 @@
        xml:space="preserve"
        id="flowRoot6899"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.16232504,0,0,0.16232504,36.044089,116.84853)"><flowRegion
+       transform="matrix(0.16232504,0,0,0.16232504,36.044089,116.84853)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><flowRegion
          id="flowRegion6893"><rect
            id="rect6891"
            width="598.18164"
@@ -780,7 +803,9 @@
        transform="matrix(0.16232504,0,0,0.16232504,36.28187,151.94992)"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot6909"
-       xml:space="preserve"><flowRegion
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><flowRegion
          id="flowRegion6903"><rect
            y="375.37683"
            x="404.28571"

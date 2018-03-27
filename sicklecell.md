@@ -11,6 +11,8 @@ Your goal is to develop an experimental test that reveals whether a patient suff
 
 The idea is to compare DNA and protein sequences of sickle cell and healthy globin, and to try out different restriction enzymes on them. 
 
+![process](process.png)
+
 This tutorial consists of four parts:
 
 1. Use the module `Bio.Entrez` to retrieve DNA and protein sequences from NCBI databases.
