@@ -41,6 +41,13 @@ We use the list of identifiers from step 4:
 
     handle = Entrez.efetch(db="value", id=identifiers, retmax="200", 
              rettype="fasta", retmode="text")
+
+To read data from text entries as a string:
+
+    text = handle.read()
+
+To read records from XML entries:
+
     records = Entrez.read(handle)
 
 In addition to the above, parameters include:

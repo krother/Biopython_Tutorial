@@ -72,7 +72,7 @@ Answer the following questions:
 
 #### 4.1 Which command gives the species the sequence is from?
 
-* `print(dna.annotation['species'])`
+* `print(dna.annotations['species'])`
 * `print(dna.annotations['organism'])`
 
 #### 4.2 Which command produces the bigger ID number (GenBank ID or PubMed ID)

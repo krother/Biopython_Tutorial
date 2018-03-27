@@ -14,4 +14,4 @@ records = Entrez.read(handle)
 rec = list(records)
 print(rec[0].keys())
 for r in rec:
-    print(r['TSeq_gi'], r['TSeq_defline'])
+    print(r['TSeq_accver'], r['TSeq_defline'])
