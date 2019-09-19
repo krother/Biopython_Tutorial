@@ -9,7 +9,7 @@ Pandas is the de-facto standard to read, analyze and visualize tabular data from
 
 The main data structure for tables is called **DataFrame**:
 
-![pandas DataFrame structure](pandas.png)
+![pandas DataFrame structure](images/pandas.png)
 
 ### Installing pandas
 
@@ -32,57 +32,57 @@ The main data structure for tables is called **DataFrame**:
     df.head()
 
 ### Exercise 2
-    
+
     df['name']
     df[['name', 'length']]
-    
+
 ### Exercise 3
-    
+
     df.sum()
-    
+
 ### Exercise 4
-    
+
     df['W'].mean()
     df['W'].std()
-    
+
 ### Exercise 5
-    
+
     df.describe()
-    
+
 ### Exercise 6
-    
+
     df[df['length'] > 5000]
-    
+
 ### Exercise 7
-    
+
     df.sort_values('length', ascending=False).head(10)
-    
+
 ### Exercise 8
-    
+
     df['H_percent'] = df['H'] / df['length']
     df.sort_values('H_percent', ascending=False).head(20)
-    
+
 ### Exercise 9
-    
+
     def match_name(name, query):
         return query in name
-    
+
     hemo = df['name'].apply(match_name, args=["Hemoglobin"])
     df[hemo]
-    
+
 ### Exercise 10
-    
+
     df.plot.scatter('K', 'R')
     plt.axis([0, 1000, 0, 500])
     plt.savefig('scatterplot.png')
-    
+
 ### Exercise 11
-    
+
     plt.figure()
     short = df[df['length'] < 1000]
     short['length'].hist(bins=50)
     plt.savefig('lengths.png')
-   
+
 ## Where to learn more?
 
 * on the [pandas homepage](https://pandas.pydata.org/)

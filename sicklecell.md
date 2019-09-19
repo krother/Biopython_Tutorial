@@ -5,13 +5,13 @@
 
 ## Goal
 
-![diagnosis](sicklecell.png)
+![diagnosis](images/sicklecell.png)
 
 Your goal is to develop an experimental test that reveals whether a patient suffers from the hereditary disease sickle cell anemia. The test for diagnosis should use a restriction enzyme on a patients’ DNA sample. For the test to work, you need to know exactly what genetic difference to test against. In this tutorial, you will use Biopython to find out.
 
-The idea is to compare DNA and protein sequences of sickle cell and healthy globin, and to try out different restriction enzymes on them. 
+The idea is to compare DNA and protein sequences of sickle cell and healthy globin, and to try out different restriction enzymes on them.
 
-![process](process.png)
+![process](images/process.png)
 
 This tutorial consists of four parts:
 
@@ -37,7 +37,7 @@ At the beginning of the course, watch the 5-minute movie **"Sickle Cell Anemia"*
 Write Python code that searches for the cDNA sequence of the sickle cell globin protein from NCBI.
 Use the `Entrez.esearch` function. As keywords, use:
 
-    sickle AND homo sapiens AND globin NOT chromosome 
+    sickle AND homo sapiens AND globin NOT chromosome
 
 Print the resulting database identifiers (not the full sequences).
 
@@ -45,11 +45,11 @@ Use the NCBI examples from the previous chapter.
 
 ### 1.2 Retrieve sequences using identifiers
 
-Use the identifiers from task 1.1, retrieve the full sequence with the `Entrez.efetch` function from the NCBI server. 
+Use the identifiers from task 1.1, retrieve the full sequence with the `Entrez.efetch` function from the NCBI server.
 
 The parameter `rettype` should be `'fasta'`, `retmode`should be `'xml'`.
 
-Print the identifier and defline for each entry using a for loop. 
+Print the identifier and defline for each entry using a for loop.
 
 You can see the available fields for a single record with:
 
@@ -69,7 +69,7 @@ Save the GenBank entry from task 1.3 to a file ‘sickle.gb’.
 
 Combine `esearch`  and `efetch` to retrieve entries for the gene sequences of the human globin family. Find appropriate keywords to limit the search to beta-globin and only complete coding sequences. Write the outcome to a file.
 
-#### Hint: 
+#### Hint:
 It is often more convenient to design the query in a browser window before moving to Python.
 
 
@@ -203,7 +203,7 @@ Print the sickle cell and healthy beta-globin sequence in subsequent lines or a 
 
 Do the first 3-4 exercises on the RegexOne website (http://www.regexone.com)
 
-Experiment with the [Regex101](http://www.regex101.com) website. 
+Experiment with the [Regex101](http://www.regex101.com) website.
 
 ### 4.2 Search for a start codon
 
@@ -217,7 +217,7 @@ Use the `re.search()` function to locate the start codon (ATG) in the cDNA seque
 
 ### 4.3 Search for a restriction site
 
-Create a regular expression using the `re.compile()` function for the restriction enzyme **DdeI** (cuts at `NN^CTNAG`). Search with a regular expression in both sickle cell and beta-globin DNA sequences. 
+Create a regular expression using the `re.compile()` function for the restriction enzyme **DdeI** (cuts at `NN^CTNAG`). Search with a regular expression in both sickle cell and beta-globin DNA sequences.
 
 For simplicity, copy-paste both sequences to string variables in your program.
 
@@ -231,7 +231,7 @@ Test patterns for the restriction sites of:
     BceAI (ACGGCNNNNNNNNNNNNN)
     BseRI (GAGGAGNNNNNNNNNN)
     EcoRI (GAATTC)
-    MstII (CCTNAGG) 
+    MstII (CCTNAGG)
 
 on both DNA sequences. Which restriction enzyme could you use to specifically identify carriers of the sickle cell anemia gene?
 

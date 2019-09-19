@@ -8,11 +8,15 @@ with contributions by Allegra Via, Magdalena Rother and Olga Sheshukova.
 
 ## What is Biopython?
 
-![Biopython Overview](overview.png)
+![Biopython Overview](images/overview.png)
 
 Biopython is a Python library for reading and writing many common biological data formats. It contains some functionality to perform calculations, in particular on 3D structures.
 
 **The library and documentation** can be found at [www.biopython.org](www.biopython.org).
+
+## Preparations
+
+Download the material from [github.com/krother/Biopython_Tutorial](https://github.com/krother/Biopython_Tutorial)
 
 ## Contents
 
