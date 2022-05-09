@@ -30,6 +30,7 @@ As a small sample study, we will BLAST a set of peptides from a few *Homo sapien
 
 Enter the two following commands in a Linux console:
 
+    :::text
     makeblastdb
     blastp
 
@@ -39,10 +40,12 @@ Both should result in an error message other than *command not found*.
 
 Create a BLAST database for the *Plasmodium* proteins. First, open a console and go to the folder *data/* . Type:
 
+    :::text
     makeblastdb -in Plasmodium_falciparum.fasta -dbtype prot
 
 You should see a message similar to:
 
+    :::text
     Adding sequences from FASTA; added 5414 sequences in 0.56993 seconds.
 
 ### 1.3 Create a BLAST database for the control organism
@@ -64,6 +67,7 @@ Before running a large series of BLAST experiments, we will run a small sequence
 
 Create an empty file *query.seq* in a text editor. Write the following peptide sequence into the file:
 
+    :::text
     DAAITAALNANAVK
 
 Make sure that there are no other characters in the file (no empty lines or FASTA deflines). Save the file to the *data/* directory.
@@ -72,6 +76,7 @@ Make sure that there are no other characters in the file (no empty lines or FAST
 
 Go to a console in the *data/* directory and type:
 
+    :::text
     blastp -query query.seq -db Plasmodium_falciparum.fasta -out output.txt -outfmt 7
 
 ### 2.3 Running local BLAST against the control group
@@ -97,12 +102,13 @@ Now we are going to do exactly the same operation from a Python program. For thi
 
 ### 3.1 Introduction to the os module
 
-Open the document *pipelines/os_module_puzzle.pdf*. Do the exercise.
+Open the document :::file BLAST/pipelines/os_module_puzzle.pdf . Do the exercise.
 
 ### 3.2 Running BLAST from Python
 
 Now we will use the function **os.system** to run BLAST. Create a Python script **run_blast.py** in the *data/* directory. Write the following commands into it:
 
+    :::python
     import os
 
     cmd = "blastp -query query.seq -db Plasmodium_falciparum.fasta -out output.txt -outfmt 7"
@@ -114,6 +120,7 @@ Execute the program.
 
 In order to make the BLAST command in Python more flexible, we will combine it from variables. Change the code to the following:
 
+    :::python
     db = "Plasmodium_falciparum.fasta"
     cmd = "blastp -query query.seq -db " + db + " -out output.txt -outfmt 7"
 
@@ -135,14 +142,16 @@ In the *pipelines/* directory you find more examples using the *os module*. If y
 
 ### 4.1 Creating query files
 
-The file *data/human_peptide.fasta* contains about 2000 peptides. We want to run BLAST for each of them. To do so, we need to write each peptide to a separate file.
+The file :::file BLAST/data/human_peptide.fasta contains about 2000 peptides. We want to run BLAST for each of them. To do so, we need to write each peptide to a separate file.
 
 First, create a new folder for the query files:
 
+    :::text
     mkdir data/queries
 
-The Python script **multiblast/split_fasta.py** does that using **Bio.SeqIO**. You can use it by typing in the *multiblast/* directory:
+The Python script :::file BLAST/multiblast/split_fasta.py does that using **Bio.SeqIO**. You can use it by typing in the *multiblast/* directory:
 
+    :::text
     python split_fasta.py ../data/human_peptide.fasta ../data/queries
 
 If you want, you can try writing that script by yourself.
@@ -151,6 +160,7 @@ If you want, you can try writing that script by yourself.
 
 Make sure that the query files have been generated and that they are not empty. You can check both with:
 
+    :::text
     ls -l data/queries
     more data/queries/9568103_99.fasta
 
@@ -158,12 +168,13 @@ Make sure that the query files have been generated and that they are not empty. 
 
 Prepare a place where the results from each BLAST run will be stored:
 
+    :::text
     mkdir data/Plasmodium_out
     mkdir data/Pombe_out
 
 ### 4.4 Run BLAST
 
-You can run BLAST for all queries with the script **multiblast/run_blast.py**. It uses **os** for three different things:
+You can run BLAST for all queries with the script :::file BLAST/multiblast/run_blast.py . It uses **os** for three different things:
 
 1. Reading directory names as command-line parameters
 2. Looping through all files in a directory
@@ -175,6 +186,7 @@ You need to complete the BLAST command inserting the file names from the given v
 
 When everything is done, you should be able to execute the script with:
 
+    :::text
     python run_blast.py ../data/queries/ ../data/Plasmodium_falciparum.fasta ../data/Plasmodium_out/
 
 Inspect the result.
@@ -189,8 +201,9 @@ In this exercise, we will evaluate the results of multiple BLAST runs. To save t
 
 XML is a structured format that is easy for computers to parse. Biopython offers a parser specific for the BLAST output which reads an output file into a neat data structure.
 
-Run the program **BLAST_XML/parse_blast_xml.py**.
+Run the program :::file BLAST/BLAST_XML/parse_blast_xml.py
 
+    :::text
     python parse_blast_xml.py
 
 ### 5.2 Read one of your BLAST result files
@@ -205,4 +218,4 @@ Customize the program to read **all** of your result files. How many hits do you
 
 ## References
 
-BLAST+ is a new, faster (C++ based) version that replaces BLAST2, as of Oct 2013. Also see: http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download 
+BLAST+ is a new, faster (C++ based) version that replaces BLAST2, as of Oct 2013. Also see: [http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download](http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)

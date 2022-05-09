@@ -1,18 +1,29 @@
 
 # Biopython Tutorial for Python 3
 
-Course material by Dr. Kristian Rother
-
-with contributions by Allegra Via, Magdalena Rother and Olga Sheshukova.
-
-
-## What is Biopython?
+Biopython is a Python library for reading and writing many common biological data formats. 
+It contains some functionality to perform calculations, in particular on 3D structures. 
+**The library and documentation** can be found at [www.biopython.org](www.biopython.org).
 
 ![Biopython Overview](overview.png)
 
-Biopython is a Python library for reading and writing many common biological data formats. It contains some functionality to perform calculations, in particular on 3D structures. 
 
-**The library and documentation** can be found at [www.biopython.org](www.biopython.org).
+## Contents
+
+* [First Steps](first_steps.md)
+* [Using NCBI E-utilities](ncbi_eutils.md)
+* [Diagnosing Sickle Cell Anemia](sicklecell.md)
+* [BLAST](BLAST.md)
+* [Analyzing tabular data with pandas](pandas.md)
+* [Biopython Examples](biopython_ref.md)
+
+
+## Authors
+
+© 2015 Kristian Rother (krother@academis.eu)
+
+This document contains contributions by Allegra Via, Magdalena Rother and Olga Sheshukova.
+I would like to thank Pedro Fernandes, Janick Mathys, Janusz M. Bujnicki and Artur Jarmolowski for their support during the courses in which the material was developed.
 
 
 ## License

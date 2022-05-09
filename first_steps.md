@@ -10,8 +10,9 @@
 
 ## 1. Load a sequence file
 
-Load the FASTA file `ap006852.fasta` into Biopython.
+Load the FASTA file :::file data/ap006852.fasta into Biopython.
 
+    :::python
     from Bio import SeqIO
 
     records = list(SeqIO.parse("ap006852.fasta", "fasta"))
@@ -31,6 +32,7 @@ Check whether the following statements are `True` or `False`:
 
 ## 2. Manipulating a sequence
 
+    :::python
     from Bio.Seq import Seq
     dna = Seq("ACGTTGCAC")
     print(dna)
@@ -63,8 +65,9 @@ What is the GC-content of the sequence loaded in task 1?
 
 ## 4. Print annotation of a GenBank file
 
-Load the GenBank file `ap006852.gbk`. In contrast to a FastA file, this one contains not only the sequence, but a rich set of annotations. Load the file as follows:
+Load the GenBank file :::file data/ap006852.gbk . In contrast to a FastA file, this one contains not only the sequence, but a rich set of annotations. Load the file as follows:
 
+    :::python
     records = list(SeqIO.parse("ap006852.gbk", "genbank"))
     dna = records[0]
 
@@ -72,27 +75,34 @@ Answer the following questions:
 
 #### 4.1 Which command gives the species the sequence is from?
 
-* `print(dna.annotations['species'])`
-* `print(dna.annotations['organism'])`
+    :::python
+    print(dna.annotations['species'])
+
+    print(dna.annotations['organism'])
 
 #### 4.2 Which command produces the bigger ID number (GenBank ID or PubMed ID)
 
-* `print(dna.annotations['gi'])`
-* `print(dna.annotations['references'][0])`
+    :::python
+    print(dna.annotations['gi'])
+
+    print(dna.annotations['references'][0])
 
 #### 4.3 How can you view a list of available annotation fields?
 
-* `print(dna.annotations.get('keys'))`
-* `print(dna.annotations.keys())`
+    :::python
+    print(dna.annotations.get('keys'))
+
+    print(dna.annotations.keys())
 
 ----
 
 ## 5. Count atoms in a PDB structure
 
-The following code reads the 3D structure of a tRNA molecule from the file `1ehz.pdb` and counts the number of atoms.
+The following code reads the 3D structure of a tRNA molecule from the file :::file data/1ehz.pdb and counts the number of atoms.
 
 **There is a bug in the program. Execute the program. Identify the problem and fix it.**
 
+    :::python
     from Bio import PDB
 
     parser = PDB.PDBParser()
@@ -116,6 +126,7 @@ Use the following code to download identifiers (with the `esearch` web app) and 
 
 **The order of lines got messed up! Please sort the lines to make the code work.**
 
+    :::python
     identifiers = records['IdList']
 
     from Bio import Entrez
