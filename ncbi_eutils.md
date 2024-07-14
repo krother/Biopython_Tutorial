@@ -5,17 +5,20 @@
 
 ### Step 1: import Entrez
 
+    :::python
     from Bio import Entrez 
 
 ### Step 2: enter your e-mail
 
 The NCBI server might block anonymous requests, especially big ones!
 
+    :::python
     Entrez.email = "my@email.eu"
 
 
 ### Step 3: Call esearch to find IDs
 
+    :::python
     handle = Entrez.esearch(db="value", term="keywords", retmax=100)
 
 Parameters include:
@@ -32,6 +35,7 @@ Parameters include:
 
 ### Step 4: get a list of IDs out of esearch
 
+    :::python
     records = Entrez.read(handle)
     identifiers = records['IdList']
 
@@ -39,15 +43,18 @@ Parameters include:
 
 We use the list of identifiers from step 4:
 
-    handle = Entrez.efetch(db="value", id=identifiers, retmax="200", 
+    :::python
+    handle = Entrez.efetch(db="value", id=identifiers, retmax="200",
              rettype="fasta", retmode="text")
 
 To read data from text entries as a string:
 
+    :::python
     text = handle.read()
 
 To read records from XML entries:
 
+    :::python
     records = Entrez.read(handle)
 
 In addition to the above, parameters include:

@@ -53,6 +53,7 @@ Print the identifier and defline for each entry using a for loop.
 
 You can see the available fields for a single record with:
 
+    :::python
     print(r.keys())
 
 ### 1.3 Retrieve a single GenBank entry
@@ -89,6 +90,7 @@ It is often more convenient to design the query in a browser window before movin
 
 Read the ‘sickle.gb’ file from task 1.4 using the `SeqIO.parse()` function:
 
+    :::python
     from Bio import SeqIO
 
     records = SeqIO.parse(filename, format)
@@ -97,6 +99,7 @@ The first parameter of `parse()` is the filename, the format is ‘genbank’. P
 
 To see the actual entries, use the `next()` function on `records` or process the `records` in a `for` loop:
 
+    :::python
     rec = next(records)
 
 
@@ -110,6 +113,7 @@ Print the id, name and description of the sickle cell globin entry.
 
 Save the GenBank entry from task 2.1 to a FASTA file using the `SeqIO.write()` function:
 
+    :::python
     SeqIO.write(records, file, format)
 
 The first parameter of `write()` is a list of sequence records, the second a file open for writing, and the third should be ‘fasta’.
@@ -122,6 +126,7 @@ Print the id, name, and description of all human beta-globins.
 #### Hint:
 This is a great occasion to exercise string formatting, e.g. to obtain a tabular output:
 
+    :::python
     print("{:10s} {:7d}".format('Ada', 33))
 
 
@@ -145,6 +150,7 @@ Print the same information as in task 2.4, but do not show non-globin entries. I
 
 Read the sequence of the sickle cell globin cDNA. Print the DNA sequence. Use the `seq` attribute of the `SeqRecord` object from the previous exercise:
 
+    :::python
     sequence = rec.seq
 
 ### 3.2 Transcribe DNA to RNA
@@ -169,6 +175,7 @@ Print all features of the L26452 entry. Use the field `r.features` on a `SeqReco
 
 Print all exon features and their attributes `start`, `end` and `nofuzzy_start`, `nofuzzy_end`:
 
+    :::python
     for feature in seq['features']:
         print(feature)
         ...
@@ -176,6 +183,7 @@ Print all exon features and their attributes `start`, `end` and `nofuzzy_start`,
 
 For each exon, extract the interval
 
+    :::text
     feature[nofuzzy_start:nofuzzy_end]
 
 Use the indices to extract portions of the complete sequence. Concatenate all exon sequences to a single string.
@@ -209,6 +217,7 @@ Experiment with the [Regex101](http://www.regex101.com) website.
 
 Use the `re.search()` function to locate the start codon (ATG) in the cDNA sequence of healthy beta-globin. The first parameter is a search pattern string, and the second is the string to be searched:
 
+    :::python
     import re
 
     match = re.search('ATG', sequence)
@@ -227,6 +236,7 @@ If the search method returns a match, print the start and stop found in both DNA
 
 Test patterns for the restriction sites of:
 
+    :::text
     HinfI (GTNNAC)
     BceAI (ACGGCNNNNNNNNNNNNN)
     BseRI (GAGGAGNNNNNNNNNN)

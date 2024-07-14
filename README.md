@@ -1,12 +1,14 @@
 
 # Biopython Tutorial for Python 3
 
-Course material by Dr. Kristian Rother
+Biopython is a Python library for reading and writing many common biological data formats. 
+It contains some functionality to perform calculations, in particular on 3D structures. 
+**The library and documentation** can be found at [www.biopython.org](www.biopython.org).
 
-with contributions by Allegra Via, Magdalena Rother and Olga Sheshukova.
+![Biopython Overview](overview.png)
 
 
-## What is Biopython?
+## Contents
 
 ![Biopython Overview](images/overview.png)
 

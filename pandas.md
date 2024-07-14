@@ -40,7 +40,7 @@ The main data structure for tables is called **DataFrame**:
 
     df.sum()
 
-### Exercise 4
+### Exercise 
 
     df['W'].mean()
     df['W'].std()
@@ -57,7 +57,7 @@ The main data structure for tables is called **DataFrame**:
 
     df.sort_values('length', ascending=False).head(10)
 
-### Exercise 8
+### Exercise 
 
     df['H_percent'] = df['H'] / df['length']
     df.sort_values('H_percent', ascending=False).head(20)
